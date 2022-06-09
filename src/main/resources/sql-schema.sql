@@ -26,9 +26,9 @@ CREATE TABLE IF NOT EXISTS orders (
 );
 
 CREATE TABLE IF NOT EXISTS orders_items (
-	fk_order_id INT NOT NULL,
-	fk_item_id INT NOT NULL, 
 	orders_items_id INT NOT NULL AUTO_INCREMENT,
+    fk_order_id INT NOT NULL,
+	fk_item_id INT NOT NULL, 
     quantity INT DEFAULT 1, 
     total_cost DECIMAL(10,2),
 	PRIMARY KEY (orders_items_id),

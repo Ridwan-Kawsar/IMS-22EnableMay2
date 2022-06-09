@@ -1,8 +1,7 @@
-DROP DATABASE IF EXISTS ims;
-
-CREATE DATABASE IF NOT EXISTS ims;
-
-USE ims; 
+DROP TABLE IF EXISTS orders_items;
+DROP TABLE IF EXISTS orders;
+DROP TABLE IF EXISTS customers;
+DROP TABLE IF EXISTS items;
 
 CREATE TABLE IF NOT EXISTS customers (
     id INT(11) NOT NULL AUTO_INCREMENT,
@@ -26,9 +25,9 @@ CREATE TABLE IF NOT EXISTS orders (
 );
 
 CREATE TABLE IF NOT EXISTS orders_items (
-	fk_order_id INT NOT NULL,
-	fk_item_id INT NOT NULL, 
 	orders_items_id INT NOT NULL AUTO_INCREMENT,
+    fk_order_id INT NOT NULL,
+	fk_item_id INT NOT NULL, 
     quantity INT DEFAULT 1, 
     total_cost DECIMAL(10,2),
 	PRIMARY KEY (orders_items_id),
