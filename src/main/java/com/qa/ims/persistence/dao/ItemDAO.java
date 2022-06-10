@@ -85,7 +85,7 @@ public class ItemDAO implements Dao<Item> {
 	@Override
 	public Item read(Long itemID) {
 		try (Connection connection = DBUtils.getInstance().getConnection();
-				PreparedStatement statement = connection.prepareStatement("SELECT * FROM item WHERE item_id = ?");) {
+				PreparedStatement statement = connection.prepareStatement("SELECT * FROM items WHERE item_id = ?");) {
 			statement.setLong(1, itemID);
 			try (ResultSet resultSet = statement.executeQuery();) {
 				resultSet.next();

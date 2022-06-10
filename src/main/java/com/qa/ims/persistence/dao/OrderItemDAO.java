@@ -80,7 +80,7 @@ public class OrderItemDAO implements Dao<OrderItem> {
 			LOGGER.debug(e);
 			LOGGER.error(e.getMessage());
 		}
-		return null;
+		return orderItem;
 	}
 
 	@Override
