@@ -1,7 +1,7 @@
 Coverage: 34%
-# Project Title
+# Inventory Management System (IMS)
 
-One Paragraph of project description goes here
+The Inventory Management System allows the user to create, read, update and delete records of customers, items and orders on a database that is connected to a local instance, MySQL. It also allows for the addition & deletion of items for an order. 
 
 ## Getting Started
 
