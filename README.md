@@ -75,12 +75,13 @@ We use [Github](https://github.com/) for versioning.
 ## Authors
 
 * **Chris Perrins** - *Initial work* - [christophperrins](https://github.com/christophperrins)
+* **Ridwan Kawsar** - *Final work* - [ridwankawsar](https://github.com/Ridwan-Kawsar)
 
 ## License
 
 MIT License
 
-Copyright (c) [2020] [Christopher Perrins]
+Copyright (c) [2022] [Ridwan Kawsar]
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
