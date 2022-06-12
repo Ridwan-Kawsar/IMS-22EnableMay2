@@ -1,4 +1,4 @@
-Coverage: 34%
+Coverage: 68%
 # Inventory Management System (IMS)
 
 The Inventory Management System allows the user to create, read, update and delete records of customers, items and orders on a database that is connected to a local instance, MySQL. It also allows for the addition & deletion of items for an order. 
@@ -75,7 +75,8 @@ We use [Github](https://github.com/) for versioning.
 ## Authors
 
 * **Chris Perrins** - *Initial work* - [christophperrins](https://github.com/christophperrins)
-* **Ridwan Kawsar** - *Final work* - [ridwankawsar](https://github.com/Ridwan-Kawsar)
+* **Jordan Benbelaid** - *Made Adjustments to initial work* - [jordanbenbelaid](https://github.com/jordanbenbelaid)
+* **Ridwan Kawsar** - *Final work - Completion of MVP* - [ridwankawsar](https://github.com/Ridwan-Kawsar)
 
 ## License
 
@@ -103,8 +104,9 @@ SOFTWARE.
 
 ## Acknowledgments
 
-* Hat tip to anyone whose code was used
-* Inspiration
-* etc
-# IMS-Start
-# IMS-Start
+* QA Community
+* Jordan Benbelaid
+* Cameron Guthrie
+
+## Jira Board
+https://ridwan-kawsar.atlassian.net/jira/software/projects/QAW5P/boards/2/roadmap
