@@ -31,10 +31,11 @@ public class OrderItemControllerTest {
 
 	@Test
 	public void testCreate() {
+		final Long OrderItemsID = 1L;
 		final Long FkOrderID = 1L;
 		final Long FkItemID = 1L;
 		final Long Quantity = 100L;
-		final OrderItem created = new OrderItem(FkOrderID, FkItemID, Quantity);
+		final OrderItem created = new OrderItem(OrderItemsID, FkOrderID, FkItemID, Quantity);
 
 		Mockito.when(utils.getLong()).thenReturn(FkOrderID);
 		Mockito.when(utils.getLong()).thenReturn(FkItemID);

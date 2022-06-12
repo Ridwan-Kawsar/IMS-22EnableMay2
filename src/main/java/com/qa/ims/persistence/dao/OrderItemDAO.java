@@ -34,10 +34,10 @@ public class OrderItemDAO implements Dao<OrderItem> {
 	 */
 	@Override
 	public List<OrderItem> readAll() {
+		List<OrderItem> orders_items = new ArrayList<>();
 		try (Connection connection = DBUtils.getInstance().getConnection();
 				Statement statement = connection.createStatement();
 				ResultSet resultSet = statement.executeQuery("SELECT * FROM orders_items");) {
-			List<OrderItem> orders_items = new ArrayList<>();
 			while (resultSet.next()) {
 				orders_items.add(modelFromResultSet(resultSet));
 			}
@@ -46,15 +46,33 @@ public class OrderItemDAO implements Dao<OrderItem> {
 			LOGGER.debug(e);
 			LOGGER.error(e.getMessage());
 		}
-		return new ArrayList<>();
+		return orders_items;
 	}
 
 	public OrderItem readLatest() {
+		OrderItem newOrderItem = null;
 		try (Connection connection = DBUtils.getInstance().getConnection();
 				Statement statement = connection.createStatement();
 				ResultSet resultSet = statement.executeQuery("SELECT * FROM orders_items ORDER BY orders_items_id DESC LIMIT 1");) {
 			resultSet.next();
-			return modelFromResultSet(resultSet);
+			newOrderItem = modelFromResultSet(resultSet);
+			return newOrderItem;
+		} catch (Exception e) {
+			LOGGER.debug(e);
+			LOGGER.error(e.getMessage());
+		}
+		return newOrderItem;
+	}
+
+	@Override
+	public OrderItem read(Long ordersItemsID) {
+		try (Connection connection = DBUtils.getInstance().getConnection();
+				PreparedStatement statement = connection.prepareStatement("SELECT * FROM orders_items WHERE orders_items_id = ?");) {
+			statement.setLong(1, ordersItemsID);
+			try (ResultSet resultSet = statement.executeQuery();) {
+				resultSet.next();
+				return modelFromResultSet(resultSet);
+			}
 		} catch (Exception e) {
 			LOGGER.debug(e);
 			LOGGER.error(e.getMessage());
@@ -81,22 +99,6 @@ public class OrderItemDAO implements Dao<OrderItem> {
 			LOGGER.error(e.getMessage());
 		}
 		return orderItem;
-	}
-
-	@Override
-	public OrderItem read(Long ordersItemsID) {
-		try (Connection connection = DBUtils.getInstance().getConnection();
-				PreparedStatement statement = connection.prepareStatement("SELECT * FROM orders_items WHERE orders_items_id = ?");) {
-			statement.setLong(1, ordersItemsID);
-			try (ResultSet resultSet = statement.executeQuery();) {
-				resultSet.next();
-				return modelFromResultSet(resultSet);
-			}
-		} catch (Exception e) {
-			LOGGER.debug(e);
-			LOGGER.error(e.getMessage());
-		}
-		return null;
 	}
 
 	/**

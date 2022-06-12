@@ -33,10 +33,10 @@ public class CustomerDAO implements Dao<Customer> {
 	 */
 	@Override
 	public List<Customer> readAll() {
+		List<Customer> customers = new ArrayList<>();
 		try (Connection connection = DBUtils.getInstance().getConnection();
 				Statement statement = connection.createStatement();
 				ResultSet resultSet = statement.executeQuery("SELECT * FROM customers");) {
-			List<Customer> customers = new ArrayList<>();
 			while (resultSet.next()) {
 				customers.add(modelFromResultSet(resultSet));
 			}
@@ -45,7 +45,7 @@ public class CustomerDAO implements Dao<Customer> {
 			LOGGER.debug(e);
 			LOGGER.error(e.getMessage());
 		}
-		return new ArrayList<>();
+		return customers;
 	}
 
 	public Customer readLatest() {
