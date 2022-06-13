@@ -9,11 +9,13 @@ These instructions will get you a copy of the project up and running on your loc
 
 ### Prerequisites
 
-What things you need to install the software and how to install them
-
-```
-Give examples
-```
+Required softwares:
+-Bash Terminal / Terminal (Command-Line Interface / Connection to Github)
+-Jira (Atlassian Website for project planning)
+-MySQL WorkBench (Database)
+-Java (Coding Language) - https://www.oracle.com/uk/java/technologies/javase-downloads.html
+-Eclipse (Code Editor)
+-Maven (Converts projects into jar files so that in can be run through a CLI / Manages dependencies) - https://maven.apache.org/download.cgi
 
 ### Installing
 
@@ -35,34 +37,60 @@ End with an example of getting some data out of the system or using it for a lit
 
 ## Running the tests
 
-Explain how to run the automated tests for this system. Break down into which tests and what they do
+*How to run automated tests in Java*
+1. Right click over the desired project/folder/package
+2. Scroll down to 'Coverage As'
+3. Select '2 JUnit Test'
+
+JUnit Tests - 
+Mockito Tests - 
 
 ### Unit Tests 
 
-Explain what these tests test, why and how to run them
+A unit is the smallest whole increment, from which this testing gets its name. It is by far one of the most important tests and it tests a small amount of code, usually a single method, to see if it returns the expected output.
 
-```
-Give an example
-```
+A unit test is meant to be a single item under test, so break up the complexity of methods calling methods, we might use stubs and drivers.
+
+In Object-Oriented languages such as Java and C#, a unit test might be best represented by a class object, we can try to isolate the units (methods and attributes) and ensure that they function correctly when called in isolation.
+
+This testing is usually done by programmers themselves as it requires an understanding of what the code is doing.
+
+The following resources/utilities may help us support our efforts to perform Unit testing:
+
+Stubs
+
+Stubs are replacements for called methods, rather than calling the real method we hard code what the response from that message will be - as long as the other method is doing its job correctly, the method under test should therefore pass.
+
+To appreciate how we might use a stub, consider a class that defines a has-a relationship (The class defines an attribute that itself is a class).
+Sometimes we might stub the behaviour of this unique attribute because it is not the target "unit" of the test and falls outside our scope.
+
+Drivers
+
+Drivers are replacements for inputs, they "drive" information into the method under test. Drivers can be beneficial when testing methods that take in information from an external system.
+
+A driver may facilitate the test, but it will not be the target of testing. Perhaps a driver may return a certain resource unique to its related technology.
 
 ### Integration Tests 
-Explain what these tests test, why and how to run them
 
-```
-Give an example
-```
+Integration Testing is usually the next step after unit testing, once the functionality of the individual components is confirmed.
 
-### And coding style tests
+Next, we verify that the functionality of the combined methods and modules. The approach to do this varies, but there are three common ways:
 
-Explain what these tests test and why
+Top-down integration
 
-```
-Give an example
-```
+Top-down integration is where you start with high-level components or modules and you test that they successfully interact with a low-level module. If the low-level module calls an even further low-level module - that input will be stubbed.
+
+Bottom-up integration
+
+Bottom-up integration is where you start at a low-level component or module and you test that the driving inputs from a high-level module are correct.
+
+Big Bang integration
+
+Big bang integration doesn't follow many guidelines. In essence, you combine everything and hope that it works. It is quick, however, if the test fails it does not give much information as to why.
 
 ## Deployment
 
-*Executing via CLI*
+*Executing the IMS via CLI*
 1. Clone the project via the following link in a terminal/bash terminal; git@github.com:Ridwan-Kawsar/IMS-22EnableMay2.git 
 2. Open a terminal and change directory till you're aligned with the IMS folder.
 3. Then type 'java -jar ims-0.0.1-jar-with-dependencies.jar' in the terminal to execute the IMS
