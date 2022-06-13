@@ -62,7 +62,17 @@ Give an example
 
 ## Deployment
 
-Add additional notes about how to deploy this on a live system
+*Executing via CLI*
+1. Clone the project via the following link in a terminal/bash terminal; git@github.com:Ridwan-Kawsar/IMS-22EnableMay2.git 
+2. Open a terminal and change directory till you're aligned with the IMS folder.
+3. Then type 'java -jar ims-0.0.1-jar-with-dependencies.jar' in the terminal to execute the IMS
+
+*Executing the IMS via a local instance*
+1. Clone the project via the following link in a terminal/bash terminal; git@github.com:Ridwan-Kawsar/IMS-22EnableMay2.git 
+2. Launch a code editor and open the project from there. 
+3. The path for this is IMS-22EnableMay2 > src/main/java > com.qa.ims > Runner.java
+4. Open MySQL and enter a Local Instance; Local Host: 3306, DB User and Password found in IMS-22EnableMay2 > src/main/resources > db.properties
+5. Go back to the Runner file, run as java application.
 
 ## Built With
 
