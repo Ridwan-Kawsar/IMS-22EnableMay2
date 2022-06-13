@@ -21,51 +21,66 @@ Required softwares:
 
 *Installing Java*
 1. To do this; open “File Explorer” then navigate into "This PC", then "Local Disk (C:)", then "LocalInstall", then "DevOps", then "Java".
+
 ![image](https://user-images.githubusercontent.com/104441372/173260344-1f6ca768-2a7b-4bf9-8e48-993691a59819.png)
 
 2. Double click the executable "jdk-14.0.1_window-x64_bin.exe"/"jdk-8u221-windows-x64.exe". The following window will appear. Click "next".
+
 ![image](https://user-images.githubusercontent.com/104441372/173260396-a756373f-0cc7-4219-a2ef-e9ac9f3b67d2.png)
 
 3. Then click "next" again.
+
 ![image](https://user-images.githubusercontent.com/104441372/173260406-16672361-99e9-47a0-b75f-32a8d09f67b4.png)
 
 4. Click "next" once more.
+
 ![image](https://user-images.githubusercontent.com/104441372/173260427-f7dbc523-e0db-4801-8e18-e7bc3b9b6ce8.png)
 
 5. Then click close.
+
 ![image](https://user-images.githubusercontent.com/104441372/173260449-90191c7b-a6a7-4791-a0fb-de4e1e4ed4a8.png)
+
 The JDK will now be installed in C:/Program Files/Java
 
 *Setting Environment Variables for Java Development Kit*
 
 1. Press the Windows button and type "path" into the search field, then select "Edit the system environment variables"
+
 ![image](https://user-images.githubusercontent.com/104441372/173260506-98789a2c-69b7-4470-889a-d18f1810e602.png)
 
 2. Click "Environment Variables...".
+
 ![image](https://user-images.githubusercontent.com/104441372/173260519-f1e9fd9c-98bd-413f-9c2c-bf257770072a.png)
 
 3. From this screen you can edit both the "User" and the "System" variables, you should change the "System" variables (bottom half of the window) as we want our changes to affect ALL users. Click "New..." to add a new system variable.
+
 ![image](https://user-images.githubusercontent.com/104441372/173260554-b6c3bfa2-cd1b-4542-b728-1e315a46481b.png)
 
 4. In the new popup window, we will create our new JAVA_HOME variable and give it a value corresponding to our JDK folder.
+
 ![image](https://user-images.githubusercontent.com/104441372/173260593-1b993bbb-142e-466b-9d00-30899d5934c5.png)
 
 5. Click "OK" and we should now see our new JAVA_HOME system variable in the "System variables" box like so.
+
 ![image](https://user-images.githubusercontent.com/104441372/173260613-2b67a347-68ec-4436-a328-8bfbac457435.png)
 
 6. Now we need to edit the "Path" variable to include a reference to the /bin (binary files) folder in our JAVA_HOME.
 To do this select the "Path" variable under "System variables" and then click "Edit...".
+
 ![image](https://user-images.githubusercontent.com/104441372/173260632-834c0df4-dc19-4db2-894e-723e924e403a.png)
 
 7. You need to append the path of the Java /bin folder to this "Path" variable, so to do this, we will reference the JAVA_HOME variable we created like so: %JAVA_HOME%\bin
 
 8.When you have done this your "Path" variable should look like the image below (make sure that there is a semi-colon before and after %JAVA_HOME%\bin).
+
 ![image](https://user-images.githubusercontent.com/104441372/173260661-22eb65a6-f4e3-4acd-bc4b-6c8424ae7dcf.png)
 
 9. To test that this has saved, open “command prompt”, type "java" and hit enter. If the "Path" variable has been configured correctly then the OS will run the file called "Java" in your JAVA_HOME /bin folder (Java.exe) and you should see this output:
+
 ![image](https://user-images.githubusercontent.com/104441372/173260680-3b8e1ebb-5e43-4497-b8da-246a01a9bb7d.png)
 
 10. You can also check which Java version you're using if you open “command prompt” and run "java -version".
+
 ![image](https://user-images.githubusercontent.com/104441372/173260694-3a3ace3a-4c55-4cf7-a904-62c037240f73.png)
 
 ## Running the tests
